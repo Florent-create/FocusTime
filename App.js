@@ -16,17 +16,18 @@ import { Timer } from './src/features/Timer';
 export default function App() {
   const [currentSubject, setCurrentSubject] = useState(null);
   return (
-    <View style={styles.container}>
-      {!currentSubject ? (
-        <Focus addSubject={setCurrentSubject} />
-      ) : (
-        <Timer
-          focusSubject={currentSubject}
-          onTimeEnd={() => {}}
-          clearSubject={() => {}}
-        />
-      )}
-    </View>
+    <><View>
+      <Text>Hellooooooo</Text>
+    </View><View style={styles.container}>
+        {!currentSubject ? (
+          <Focus addSubject={setCurrentSubject} />
+        ) : (
+          <Timer
+            focusSubject={currentSubject}
+            onTimeEnd={() => { } }
+            clearSubject={() => { } } />
+        )}
+      </View></>
   );
 }
 
