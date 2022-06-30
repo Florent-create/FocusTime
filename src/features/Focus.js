@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { colors } from '../utils/colors';
+import { Colors } from '../utils/Colors';
 import { TextInput } from 'react-native-paper';
 import { RoundedButton } from '../components/RoundedButton';
-import { spacing } from '../utils/sizes';
+import { spacing } from '../utils/Sizes';
 
 export const Focus = ({ addSubject }) => {
   const [subject, setSubject] = useState(null);
-  console.log(subject);
+
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -16,13 +16,13 @@ export const Focus = ({ addSubject }) => {
           onChangeText={setSubject}
           label="What would you like to focus on ?"
         />
-        <View style={styles.button}>
+      </View>
+      <View style={styles.button}>
           <RoundedButton
             title="+"
             size={50}
             onPress={() => addSubject(subject)}
           />
-        </View>
       </View>
     </View>
   );
@@ -30,7 +30,7 @@ export const Focus = ({ addSubject }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+
   },
   textInput: {
     flex: 1,
@@ -38,10 +38,12 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     padding: spacing.lg,
-    justifyContent: 'top',
+    justifyContent: 'center',
     flexDirection: 'row',
   },
   button: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
     justifyContent: 'center',
   },
 });
