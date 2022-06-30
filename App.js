@@ -17,7 +17,6 @@ import { RoundedButton } from './src/components/RoundedButton';
 import { fontSizes } from './src/utils/Sizes';
 
 export default function App() {
-  console.log("test")
   const [currentSubject, setCurrentSubject] = useState(null);
   const [history, setHistory] = useState([]);
   return (
