@@ -20,7 +20,7 @@ const PATTERN = [
 ];
 
 
-export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
+export const Timer = ({ focusSubject, clearSubject, onTimerEnd, totalTimeSpent, setTotalTimeSpent, setModalVisible }) => {
   useKeepAwake();
   const [isStarted, setIsStarted] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -29,7 +29,8 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const percentage = parseFloat(progress*100).toFixed(2);
 
   const onEnd = (reset) => {
-    
+    setModalVisible((parseFloat(totalTimeSpent)+parseFloat(minutes))>60);
+    setTotalTimeSpent(parseFloat(totalTimeSpent)+parseFloat(minutes));
     setIsStarted(false);
     setProgress(0);
     reset();
